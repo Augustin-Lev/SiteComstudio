@@ -1,0 +1,202 @@
+body{
+    background-color: aquamarine;
+    padding: 0%;
+    margin: 0%;
+}
+.block-taille-ecran{
+    min-height: 100vh;  
+}
+
+.acceuil{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url("/image/EJ1A6224.jpg");
+    background-size: cover;
+}
+
+.presentation{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.portfolio{
+
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+
+    background-color: blue;
+
+}
+
+.offres{
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.offre-grand{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+}
+.boutton{
+    background-color: brown;
+    padding: 3%;
+    margin: 3%;
+    color: white;
+    text-decoration: none;
+
+}
+.logo-rond{
+    width: 10%;
+    border-radius: 50%;
+}
+
+.paragraphe-presentation{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.centrer{
+    text-align: center;
+}
+
+.carte{
+    border: solid 1mm;
+}
+
+.offres-contenu{
+    text-align: left;
+}
+
+.contact{
+
+    display: flex;
+
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact>form{
+    display: flex;
+
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact>form>input{
+    margin-bottom: 20%;
+}
+
+.contact-coordonnees{
+    display: flex;
+    background-color: white;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+footer{
+    display: flex;
+    flex-direction: row;
+
+}
+footer>div{
+    flex:1;
+}
+
+.ligne-logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.sommaire{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.sommaire>div{
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-footer{
+    width: 50%;
+    border-radius: 50%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  
+}
+.conteneur-footer-logo{
+    display: flex;
+
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.conteneur-footer-sommaire{
+    display: flex;
+
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
+.conteneur-footer-mail{
+    display: flex;
+
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    padding-bottom: 50px;
+    padding-right: 50px;
+}
+
+a{
+    color:inherit;
+    text-decoration: none;
+}
+
+.conteneur-login{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.login-lasalle{
+    background-color: brown;
+    width: 100%;
+    flex :1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-evenement{
+    flex: 1;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+

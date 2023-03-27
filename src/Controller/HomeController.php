@@ -2,17 +2,18 @@
 
 namespace App\Controller;
 
+use App\Repository\PicturesRepository;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class MainController extends AbstractController {
+class HomeController extends AbstractController
+{
 
-    /**
-     *@Route("/",name="Hello")
-     * 
-     */
-    public function index(){
-        return render("base.html.twig");
-    }
+   public function index(): Response
+   {
+       
+       return $this->render('view_index.php');
+   }
+
 }
