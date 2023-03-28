@@ -7,18 +7,18 @@
     <link rel="stylesheet" href="style\stylesheet.css" >
     <link rel="stylesheet" href="style\carousel.css" >
     <link rel="javascript" href="style\javascript.js" >
-    <title>Document</title>
+    <title>Com'Studio</title>
 </head>
 <body>
     <header>
-        <!-- <div>j'en suis ici</div> -->
+        <div id="home" class="header-logo">Com'STUDIO</div>
     </header>
 
-    <div class="block-taille-ecran acceuil">
-        <a class="boutton" href = "LoginController.php">Voire les photos</a>
+    <div id="connexion" class="block-taille-ecran acceuil">
+        <a class="boutton" href = "/login">Voire les photos</a>
     </div>
 
-    <div class="block-taille-ecran presentation">
+    <div id="presentation" class="block-taille-ecran presentation">
         <img src="/image/Logo_Noir.jpg" alt="logoCom'Studio" class="logo-rond">
         <h2>Qui sommes-nous ?</h2>
         <p class="paragraphe-presentation">
@@ -27,7 +27,7 @@
     </div>
 
 
-    <div class="block-taille-ecran portfolio">
+    <div id="portfolio" class="block-taille-ecran portfolio">
         <h2 class="centrer">Portfolio</h2>
         <div>
             <div class="carousel">
@@ -122,7 +122,7 @@
     </div>
    
 
-    <div class="block-taille-ecran offre-grand ">
+    <div id="offres" class="block-taille-ecran offre-grand ">
         <h2>Nos offres</h2>
         <div class="offres">
             <div class="carte">
@@ -161,7 +161,7 @@
         </div>
     </div>
 
-    <div class="contact-coordonnees">
+    <div id="contact" class="contact-coordonnees">
         <div id="contact" class="contact">
         <h2>Nous contacter</h2>
         <form action="mailer.php" method="POST">
@@ -190,7 +190,6 @@
     
 
 
-
     <footer>
         <div class="conteneur-footer-logo">
             <img src="/image/Logo_Noir.jpg" alt="logoCom'Studio" class="logo-footer">
@@ -198,15 +197,15 @@
         <div class="conteneur-footer-sommaire">
             <div class="sommaire">
                 <div>
-                    <a href="/home">Home</a>
-                    <a href="/connexion">Se connecter</a>
-                    <a href="/presentation">Qui sommes-nous ?</a>
-                    <a href="/portfolio">Portfolio</a>
+                    <a href="#home">Home</a>
+                    <a href="#connexion">Se connecter</a>
+                    <a href="#presentation">Qui sommes-nous ?</a>
+                    <a href="#portfolio">Portfolio</a>
                 </div>
                 <div>
-                    <a href="/offres">Nos offres</a>
-                    <a href="/contact">Nous contacter</a>
-                    <a href="/photos">Les photos</a>
+                    <a href="#offres">Nos offres</a>
+                    <a href="#contact">Nous contacter</a>
+                    <a href="#connexion">Les photos</a>
                 </div>
 
             </div>

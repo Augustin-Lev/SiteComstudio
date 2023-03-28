@@ -5,15 +5,15 @@
         <div class="conteneur-footer-sommaire">
             <div class="sommaire">
                 <div>
-                    <a href="/home">Home</a>
-                    <a href="/connexion">Se connecter</a>
-                    <a href="/presentation">Qui sommes-nous ?</a>
-                    <a href="/portfolio">Portfolio</a>
+                    <a href="/#home">Home</a>
+                    <a href="/#connexion">Se connecter</a>
+                    <a href="/#presentation">Qui sommes-nous ?</a>
+                    <a href="/#portfolio">Portfolio</a>
                 </div>
                 <div>
-                    <a href="/offres">Nos offres</a>
-                    <a href="/contact">Nous contacter</a>
-                    <a href="/photos">Les photos</a>
+                    <a href="/#offres">Nos offres</a>
+                    <a href="/#contact">Nous contacter</a>
+                    <a href="/#photos">Les photos</a>
                 </div>
 
             </div>

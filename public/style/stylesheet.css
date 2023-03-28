@@ -180,23 +180,123 @@ a{
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
+
+    min-height: 100vh;
+
+   
 }
 
 .login-lasalle{
-    background-color: brown;
+    background-color: rgb(165, 42, 42);
     width: 100%;
-    flex :1;
+    flex :11;
 
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .login-evenement{
-    flex: 1;
+    flex: 10;
     
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
+.bordure-fondue{
+    flex:1;
+    background: linear-gradient(90deg, rgb(165, 42, 42) 0%, rgba(252,252,252,0) 100%);
+}
+
+.header-logo{
+    padding : 25px;
+    font-size: 25px;
+}
+
+.derniere-categories {
+    display: flex;
+}
+
+.derniere-categories>div {
+    flex:1;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.derniere-categorie1{
+    background-image: url("/image/rallye.jpg");
+    background-size:cover;
+}
+
+.derniere-categorie2{
+    background-image: url("/image/JDC.jpg");
+    background-size:cover;
+}
+
+.derniere-categorie3{
+    background-image: url("/image/DFI.jpg");
+    background-size:cover;
+}
+
+.conteneur-categorie{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    background-color: blue;
+    border-radius:20px ;
+    margin: 20px;
+}
+
+/* voire plus de catégorie  */
+.read-more-state {
+    display: none;
+  }
+  
+.read-more-target {
+   opacity: 0;
+   max-height: 0;
+   font-size: 0;
+   transition: .25s ease;
+}
+
+.read-more-state:checked ~ .read-more-wrap .read-more-target {
+  opacity: 1;
+  font-size: inherit;
+  max-height: 999em;
+}
+
+.categorie-label{
+    display: flex;
+    padding-left: 50px;
+}
+
+.read-more-target{
+    padding : 5px;
+}
+
+.read-more-wrap{
+    padding-top: 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+
+}
+
+.categorie{
+    padding-left: 40px;
+}
+
+li{
+    list-style: none;
+}

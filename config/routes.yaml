@@ -10,3 +10,7 @@ login:
    path: /login
    controller: App\Controller\LoginController::index
 
+
+menu:
+   path: /menu
+   controller: App\Controller\MenuController::index
