@@ -222,12 +222,15 @@ a{
 
 .derniere-categories>div {
     flex:1;
-    min-height: 100vh;
+    
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    margin: 2vw;
+    height: calc(88vw/3) ;
 }
 
 
@@ -299,4 +302,61 @@ a{
 
 li{
     list-style: none;
+}
+
+/* view_Photo */
+
+.download{
+    background-color: rgba(188, 0, 0, 0.505);
+    position: absolute; 
+    width: 32vw;
+    
+    opacity: 0;
+}
+.download>a{
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.download:hover{
+    opacity: 1;
+}
+.conteneur-photo>a>img{
+    width:32vw;
+    height: auto;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.header-photo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.header-photo>div{
+    padding: 25px;
+    flex: 1;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.header-photo>div>a{
+    height: 100%;
+
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    
 }

@@ -14,3 +14,8 @@ login:
 menu:
    path: /menu
    controller: App\Controller\MenuController::index
+
+
+photo:
+   path: /photo
+   controller: App\Controller\PhotoController::index
