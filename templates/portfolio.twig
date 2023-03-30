@@ -1,0 +1,28 @@
+<div class="background">    
+    <article class='article-categorie'>
+        <h2>Portfolio</h2>
+        <h3>Photos actuelles</h3>
+
+        {% set portfolios = ["/image/portfolio1.jpg","/image/portfolio2.jpg","/image/portfolio3.jpg","/image/portfolio4.jpg","/image/portfolio5.jpg"] %}
+
+        {% for portfolio in portfolios %}
+
+            <div class="portfolio-manager">
+                <p>{{ portfolio }}</p>
+              
+                <a href=""><img src="image/x-circle-fill.svg"></a>
+                
+            </div>
+
+            
+        {% endfor %}
+        <form>
+            <img src="image/upload.svg">
+            <input type="file" class="boutton">
+            <label>Ajouter une image</label>
+
+            <a type="submit" class="boutton">Annuler</a>
+        </form>
+
+    </article>
+</div>

@@ -1,0 +1,30 @@
+<div class="background">    
+    <article class='article-categorie'>
+        <h2>Nouvelle categorie</h2>
+        <form>
+            <div  class="nom_categorie" >
+                <label for="name_categorie">Nom Catégorie</label>
+                <input name="name_categorie" id="name_categorie">
+            </div>
+            <fieldset>
+                <legend>Peut-être vu par : </legend>
+                <input type='checkbox' id='unilasalle'>
+                <label for="unilasalle">UniLaSalle</label>
+
+                    <input type='checkbox' id='EventCode'>
+                    <label for="EventCode">Code Evenement</label>
+                <div>
+                    <h3>Nom evenement</h3>
+                    <p>Studio-{{ categorie }}</p>
+
+                    <label for="codeEvenement" >Code evenement</h3>
+                    <input type='text' id="codeEvenement">
+                </div>
+                <p>Par défaut, le dossier créé sera invisible</p>
+            </fieldset>
+
+            <a type="submit" class="boutton">Annuler</a>
+            <a type="submit" class="boutton">Créer</a>
+        </form>
+    </article>
+</div>

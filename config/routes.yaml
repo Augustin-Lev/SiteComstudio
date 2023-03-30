@@ -19,3 +19,8 @@ menu:
 photo:
    path: /photo
    controller: App\Controller\PhotoController::index
+
+admin:
+   path: /admin
+   controller: App\Controller\AdminController::index
+

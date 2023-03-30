@@ -15,7 +15,7 @@ class MenuController extends AbstractController
    public function index(Request $request): Response
    {
      
-       return $this->render('view_menu.php');
+       return $this->render('view_menu.twig');
    }
 
 }
