@@ -14,6 +14,7 @@
 
 <body>
     {% set categorie = "GALA" %}
+    
     {# {% include 'portfolio.twig' %} #}
 
       <header class="header-photo">
@@ -49,11 +50,14 @@
                     {% if not i == 0 %}
                     <div class="dossier">
                         <h3>{{ dossier }}</h3>
-                        <div>
+                        <form method="POST" action="\manager">
                             <img src="image/stopwatch.svg">
                             <a href='add_image'><img src="image/upload.svg"></a>
-                            <img src="image/x-circle-fill.svg">
-                        </div>
+                            <input type="hidden" name="categorie" value={{categorie[0]}}>
+                            <input type="hidden" name="dossier" value={{categorie[i]}}>
+
+                            <button type="submit"><img src="image/x-circle-fill.svg"></button>
+                        </form>
                     </div>
                     {% endif %}
 

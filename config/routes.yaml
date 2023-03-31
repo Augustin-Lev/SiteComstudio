@@ -34,3 +34,8 @@ addImage:
    path: /add_image
    controller: App\Controller\AddImageController::index
 
+manager:
+   path: /manager
+   controller: App\Controller\ManagerController::index
+
+
