@@ -16,12 +16,12 @@
 
             
         {% endfor %}
-        <form>
+        <form method="POST" action="\upload" enctype="multipart/form-data">
             <img src="image/upload.svg">
-            <input type="file" class="boutton">
-            <label>Ajouter une image</label>
-
-            <a type="submit" class="boutton">Annuler</a>
+            <input type="file" accept=".jpg, .jpeg" name="fichier[]" class="boutton" multiple>
+            
+            <button type="submit" class="boutton" name="ajouter" value="portfolio">Ajouter une image</button>
+            <a href="\admin" class="boutton">Annuler</button>
         </form>
 
     </article>

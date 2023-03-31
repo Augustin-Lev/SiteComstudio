@@ -24,3 +24,8 @@ admin:
    path: /admin
    controller: App\Controller\AdminController::index
 
+upload:
+   path: /upload
+   controller: App\Controller\UploadController::index
+
+
