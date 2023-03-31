@@ -1,0 +1,21 @@
+<div class="background">    
+    {% set nom_dossier ="Massey-2023" %}
+    {% set nb_photos = 28 %}
+
+    <article class='article-categorie'>
+        <h2>Programmer la publication</h2>
+        <div>
+        <h3>Nom du dossier : {{ nom_dossier }}</h3>
+        <h3>Nombre de photos : {{ nb_photos }}</h3>
+        </div>
+        <form>
+            <label for="date">Rendre visible le : </label>
+            <input type='datetime-local' id='date'>
+
+
+            <a type="submit" class="boutton">Rendre visible dès maintenant</a>
+            <a type="submit" class="boutton">Programmer</a>
+            <a type="submit" class="boutton">Annuler</a>
+        </form>
+    </article>
+</div>

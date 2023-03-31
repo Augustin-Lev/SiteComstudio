@@ -1,0 +1,32 @@
+<div class="background">    
+    {% set categorie="Massey" %}
+    {% set nb_photos = 28 %}
+
+    <article class='article-categorie'>
+        <h2>{{ categorie}}</h2>
+        <form>
+            <div  class="nom_categorie" >
+                <h3>Nombre de photos : {{ nb_photos }}</h3>
+            </div>
+            <fieldset>
+                <legend>Peut-être vu par : </legend>
+                <input type='checkbox' id='unilasalle'>
+                <label for="unilasalle">UniLaSalle</label>
+
+                    <input type='checkbox' id='EventCode'>
+                    <label for="EventCode">Code Evenement</label>
+                <div>
+                    <h3>Nom evenement</h3>
+                    <p>Studio-{{ categorie }}</p>
+
+                    <label for="codeEvenement" >Code evenement</h3>
+                    <input type='text' id="codeEvenement">
+                </div>
+                <p>Par défaut, le dossier créé sera invisible</p>
+            </fieldset>
+
+            <a type="submit" class="boutton">Annuler</a>
+            <a type="submit" class="boutton">Modifier</a>
+        </form>
+    </article>
+</div>
