@@ -14,7 +14,7 @@
 
 <body>
     {% set categorie = "GALA" %}
-    {% include 'portfolio.twig' %}
+    {# {% include 'portfolio.twig' %} #}
 
       <header class="header-photo">
         <div id="home" class="header-logo">Com'STUDIO</div>
@@ -51,7 +51,7 @@
                         <h3>{{ dossier }}</h3>
                         <div>
                             <img src="image/stopwatch.svg">
-                            <img src="image/upload.svg">
+                            <a href='add_image'><img src="image/upload.svg"></a>
                             <img src="image/x-circle-fill.svg">
                         </div>
                     </div>
@@ -74,9 +74,6 @@
 
     </main>
 
-
-
- 
   
     {% include 'footer.html' %}
 </body>

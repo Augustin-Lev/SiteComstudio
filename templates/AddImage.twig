@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style\stylesheet.css" >
+    <link rel="stylesheet" href="style\carousel.css" >
+    <link rel="javascript" href="style\javascript.js" >
+    <title>ADMIN</title>
+</head>
+    {% set nbPerRow = 4 %}
+    {% set categories = [['GALA','2023','2022','2020'],['JDC','2023','2022','2020','2017','2016','2015','2003'],['UniTech\'Days','2022','2020','2017','2016']]%}
+
+<body>
+    {% set categorie = "GALA" %}
+    {% include 'AddImages.twig' %}
+
+      <header class="header-photo">
+        <div id="home" class="header-logo">Com'STUDIO</div>
+        
+        <div><h1>Administrateur</h1></div>
+
+        <div>
+            <a href="nouvel event" class="boutton">Nouvel evenement</a>
+            <a href="nouvel event" class="boutton">Portfolio</a>
+        </div>
+        
+    </header>
+
+    <main>
+        <div>
+            {% for categorie in categories %}
+            <div class="admin-categorie">
+                <div></div>   
+                <h2>{{ categorie[0] }}</h2>
+
+                <div class="admin-plus">
+                    <img src="image/plus.svg">
+                    <img src="image/three-dots.svg">
+                </div>
+            </div>   
+
+            <div class="admin-categorie-corps">
+                <div class="admin-row">
+                {% set i = 0 %}
+                {% for dossier in categorie %}
+
+                    {% if not i == 0 %}
+                    <div class="dossier">
+                        <h3>{{ dossier }}</h3>
+                        <div>
+                            <img src="image/stopwatch.svg">
+                            <a href='add_image.twig'><img src="image/upload.svg"></a>
+                            <img src="image/x-circle-fill.svg">
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if i % nbPerRow == 0 %}
+                        </div>
+                        <div class="admin-row">
+                    {% endif %}
+                        
+                    {% set i = i +1 %}
+                {% endfor %}
+                </div>
+            </div>
+            {% endfor %} 
+
+        </div>    
+
+    
+
+    </main>
+
+  
+    {% include 'footer.html' %}
+</body>
+</html>

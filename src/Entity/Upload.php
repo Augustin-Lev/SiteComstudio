@@ -5,19 +5,20 @@ var_dump($_FILES['fichier']);
 
 
 if ($_POST['ajouter'] == 'portfolio'){
-    
     $chemin = "C:\wamp64\www\studioSite\public\image\portfolio\portfolio";
-    // var_dump($to);
-    $i = 1;
-    foreach( $_FILES['fichier']['tmp_name'] as $from){
-        $to = $i.'.jpg'; 
-        if(move_uploaded_file($from, $chemin.$to)){
-            echo 'image '.$i.' bien importée <br/>';
-        }else{
-            echo 'image '.$i.' echec <br/>';
-        }
-        $i++;
-    }
+}
+else {
+    $chemin  = "C:\wamp64\www\studioSite\public\image/".$_POST['ajouter'];
 }
 
-
+// var_dump($to);
+$i = 1;
+foreach( $_FILES['fichier']['tmp_name'] as $from){
+    $to = "_".$i.'.jpg'; 
+    if(move_uploaded_file($from, $chemin.$to)){
+        echo 'image '.$i.' bien importée <br/>';
+    }else{
+        echo 'image '.$i.' echec <br/>';
+    }
+    $i++;
+}

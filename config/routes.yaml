@@ -29,3 +29,8 @@ upload:
    controller: App\Controller\UploadController::index
 
 
+
+addImage:
+   path: /add_image
+   controller: App\Controller\AddImageController::index
+
