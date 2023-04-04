@@ -39,6 +39,20 @@ class ImagesRepository extends ServiceEntityRepository
         }
     }
 
+
+    public function findDossierId($categorie, $dossier){
+        $conn = $this->getEntityManager()->getConnection();
+        $sql = '
+        SELECT * FROM Images i
+        WHERE i.index_dossier > 0
+        ORDER BY i.index_dossier ASC
+        ';
+        $stmt = $conn->prepare($sql);
+        $resultSet = $stmt->executeQuery();
+       
+        return $resultSet->fetchAllAssociative();
+    }
+
 //    /**
 //     * @return Images[] Returns an array of Images objects
 //     */

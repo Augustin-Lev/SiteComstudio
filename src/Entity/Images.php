@@ -25,6 +25,9 @@ class Images
     #[ORM\Column(length: 255)]
     private ?string $dossier = null;
 
+    #[ORM\Column]
+    private ?int $indexDossier = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -74,6 +77,18 @@ class Images
     public function setDossier(string $dossier): self
     {
         $this->dossier = $dossier;
+
+        return $this;
+    }
+
+    public function getIndexDossier(): ?int
+    {
+        return $this->indexDossier;
+    }
+
+    public function setIndexDossier(int $indexDossier): self
+    {
+        $this->indexDossier = $indexDossier;
 
         return $this;
     }

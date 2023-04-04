@@ -10,8 +10,12 @@
         <form method="POST" action="\upload" enctype="multipart/form-data">
             
             <input type="file" accept=".jpg, .jpeg" name="fichier[]" class="boutton" multiple>
+
+            <input type="hidden" name="action" value="supprimer">
+            <input type="hidden" name="categorie" value={{categorie}}>
+            <input type="hidden" name="dossier" value={{ dossier }}>
             
-            <button type="submit" class="boutton" name="ajouter" value="{{categorie}}\{{dossier}}\{{categorie}}-{{dossier}}">Ajouter des image</button>
+            <button type="submit" class="boutton" name="ajouter" value="dossier">Ajouter des image</button>
             <a href="\admin" class="boutton">Annuler</a>
         </form>
 
