@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style\stylesheet.css" >
-    <link rel="stylesheet" href="style\carousel.css" >
-    <link rel="javascript" href="style\javascript.js" >
+    <link rel="stylesheet" href="..\style\stylesheet.css" >
+    <link rel="stylesheet" href="..\style\carousel.css" >
+    <link rel="javascript" href="..\style\javascript.js" >
     <title>ADMIN</title>
 </head>
     {% set nbPerRow = 4 %}
@@ -16,7 +16,23 @@
     
     
 
-    {# {% include 'portfolio.twig' %} #}
+    <div class="background">    
+    <article class='article-categorie'>
+        <h2>Nouveau dossier {{catego}}</h2>
+        <form method="post" action = "/manager">
+            <div  class="nom_categorie" >
+                <label for="dossier">Nom dossier</label>
+                <input name="dossier" id="dossier">
+
+                <input type="hidden" name="action" value="ajout">
+                <input type="hidden" name="categorie" value={{catego}}>
+            </div>
+
+            <button type="submit" class="boutton">Annuler</button>
+            <button type="submit" class="boutton">Créer</button>
+        </form>
+    </article>
+    </div>
 
       <header class="header-photo">
         <div id="home" class="header-logo">Com'STUDIO</div>
@@ -38,8 +54,8 @@
                 <h2>{{ categorie[0] }}</h2>
 
                 <div class="admin-plus">
-                    <a href="/add_dossier/{{ categorie[0] }}"><img src="image/plus.svg"></a>
-                    <img src="image/three-dots.svg">
+                    <a href="/add_dossier/{{ categorie[0] }}"><img src="../image/plus.svg"></a>
+                    <img src="../image/three-dots.svg">
                 </div>
             </div>   
 
@@ -52,13 +68,13 @@
                     <div class="dossier">
                         <h3>{{ dossier }}</h3>
                         <form method="POST" action="\manager">
-                            <img src="image/stopwatch.svg">
-                            <a href='add_image'><img src="image/upload.svg"></a>
+                            <img src="../image/stopwatch.svg">
+                            <a href='add_image'><img src="../image/upload.svg"></a>
                             <input type="hidden" name="action" value="supprimer">
                             <input type="hidden" name="categorie" value={{categorie[0]}}>
                             <input type="hidden" name="dossier" value={{categorie[i]}}>
 
-                            <button type="submit"><img src="image/x-circle-fill.svg"></button>
+                            <button type="submit"><img src="../image/x-circle-fill.svg"></button>
                         </form>
                     </div>
                     {% endif %}

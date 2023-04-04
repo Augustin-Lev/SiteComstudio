@@ -34,6 +34,12 @@ addImage:
    path: /add_image
    controller: App\Controller\AddImageController::index
 
+
+add_dossier:
+   path: /add_dossier/{catego}
+   controller: App\Controller\ManagerController::addDossier
+
+
 manager:
    path: /manager
    controller: App\Controller\ManagerController::index
