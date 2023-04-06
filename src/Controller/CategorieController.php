@@ -15,14 +15,14 @@ class CategorieController extends AbstractController
 
    public function index(EntityManagerInterface $entityManager, Request $request): Response
    {
-      return $this->render('new_categorie.twig');
+      require ("C:\wamp64\www\studioSite\src\Entity\CategorieManager.php");    
+      return $this->render('new_categorie.twig',['categories' =>$categorieTab]);
    }
 
    public function add(EntityManagerInterface $entityManager, Request $request): Response
    {
-      
-      require("C:\wamp64\www\studioSite\src\Entity\CategorieManager.php");
-      return $this->render('view_admin.twig');
+      require ("C:\wamp64\www\studioSite\src\Entity\CategorieManager.php");    
+      return $this->render('view_admin.twig', ['categories' =>$categorieTab]);
    }
 
 

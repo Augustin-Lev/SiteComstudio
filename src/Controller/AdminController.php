@@ -14,11 +14,8 @@ class AdminController extends AbstractController
 {
 
    public function index(EntityManagerInterface $entityManager): Response
-   {
-
+   { 
         require ("C:\wamp64\www\studioSite\src\Entity\CategorieManager.php");
-
-        $categories =  [['GALA','2023','2022','2020'],['JDC','2023','2022','2020','2017','2016','2015','2003'],['UniTech\'Days','2022','2020','2017','2016']];
         return $this->render('view_admin.twig', ['categories' =>$categorieTab]);
    }
 

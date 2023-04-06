@@ -44,9 +44,6 @@ manager:
    path: /manager
    controller: App\Controller\ManagerController::index
 
-
-
-
 portfolio:
    path: /portfolio
    controller: App\Controller\AdminController::portfolio

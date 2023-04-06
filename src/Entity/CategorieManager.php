@@ -17,39 +17,46 @@ if(isset($_POST['name_categorie'])){
     $categorie = new Categorie;
     $categorie -> setNomCategorie($nom);
 
-    if(isset($_POST['Unilasalle'])){
-        if($_POST['Unilasalle']== 'Unilasalle'){
-            $unilasalle = TRUE;
-            $categorie -> setUnilasalle(TRUE);
-        }
-    }
+    if(isset($_POST['name_dossier'])){
+        $categorie -> setDossier($_POST['name_dossier']);
 
-    if(isset($_POST['EventCode'])){
-        if($_POST['EventCode']== 'EventCode'){
-            if(isset($_POST['EventCode'])){
-                $code = $_POST['codeEvenement'];
-                $codeEvenement = TRUE;
-                $categorie -> setCode($code);
-                
+        if(isset($_POST['Unilasalle'])){
+            if($_POST['Unilasalle']== 'Unilasalle'){
+                $unilasalle = TRUE;
+                $categorie -> setUnilasalle(TRUE);
             }
         }
-    }
-
-    if( $unilasalle or $codeEvenement){
     
-        $em = $this->getDoctrine()->getManager();
-
-        $em->persist($categorie);
-        $em->flush();
-        echo 'ok';
+    
+        if(isset($_POST['EventCode'])){
+            if($_POST['EventCode']== 'EventCode'){
+                if(isset($_POST['EventCode'])){
+                    $code = $_POST['codeEvenement'];
+                    $codeEvenement = TRUE;
+                    $categorie -> setCode($code);
+                    
+                }
+            }
+        }
+    
+        if( $unilasalle or $codeEvenement){
+        
+            $em = $this->getDoctrine()->getManager();
+    
+            $em->persist($categorie);
+            $em->flush();
+            echo 'ok';
+        }
+    
     }
+
+
 }else{
     echo 'pas de categorie a créer';
 }
 
 
 $categorieTab = [[$product[0]->getNomCategorie()]];
-
 
 $dejaPresent = FALSE;
 foreach( $product as $ligne){

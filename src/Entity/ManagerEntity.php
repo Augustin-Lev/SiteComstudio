@@ -1,7 +1,7 @@
 <?php
 
-use App\Entity\Dossier;
-use App\Repository\DossierRepository;  
+use App\Entity\Categorie;
+use App\Repository\CategorieRepository;  
 
 var_dump($_POST);
 $dossier = "C:\wamp64\www\studioSite\public\image/".$_POST["categorie"]."/".$_POST["dossier"];
@@ -30,12 +30,24 @@ if($_POST["action"]=="ajout"){
         echo 'le dossier existe déjà';
 
     }else{
-        $dossier = new Dossier;
-        $dossier -> setCategorie($_POST["categorie"]);
-        $dossier -> setNomDossier($_POST['dossier']);
         
+        $enregistement = new Categorie;
+        $enregistement -> setNomCategorie($_POST["categorie"]);
+        $enregistement -> setDossier($_POST['dossier']);
+
+        $repository = $entityManager->getRepository(categorie::class);
+        $product = $repository->findAll();
+        foreach( $product as $ligne){
+            if( $ligne-> getNomCategorie() == $_POST["categorie"]){
+                $enregistement -> setUnilasalle($ligne-> isUnilasalle());
+                $enregistement -> setCode($ligne-> getCode());               
+                break;
+            }
+          
+        }
+
         $em = $this->getDoctrine()->getManager();
-        $em->persist($dossier);
+        $em->persist($enregistement);
         $em->flush();
         echo 'dossier en base de donnée <br/>';
         
@@ -46,3 +58,6 @@ if($_POST["action"]=="ajout"){
         }
     }
 }
+
+
+

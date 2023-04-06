@@ -8,14 +8,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Doctrine\ORM\EntityManagerInterface;
 
 class ManagerController extends AbstractController
 {
 
-   public function index(Request $request): Response
+   public function index(EntityManagerInterface $entityManager, Request $request): Response
    {
-    require("C:\wamp64\www\studioSite\src\Entity\ManagerEntity.php");
-    return $this->render('blank.twig');
+      require("C:\wamp64\www\studioSite\src\Entity\CategorieManager.php");
+      require("C:\wamp64\www\studioSite\src\Entity\ManagerEntity.php");
+      return $this->render('blank.twig');
    }
 
    
