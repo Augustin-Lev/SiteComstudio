@@ -13,52 +13,38 @@ class Dossier
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $dossier = null;
+    #[ORM\ManyToOne(inversedBy: 'dossiers')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?categorie $categorie = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $categorie = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $sousDossier = null;
+    private ?string $nom_dossier = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getDossier(): ?string
-    {
-        return $this->dossier;
-    }
-
-    public function setDossier(string $dossier): self
-    {
-        $this->dossier = $dossier;
-
-        return $this;
-    }
-
-    public function getCategorie(): ?string
+    public function getCategorie(): ?categorie
     {
         return $this->categorie;
     }
 
-    public function setCategorie(string $categorie): self
+    public function setCategorie(?categorie $categorie): self
     {
         $this->categorie = $categorie;
 
         return $this;
     }
 
-    public function getSousDossier(): ?string
+    public function getNomDossier(): ?string
     {
-        return $this->sousDossier;
+        return $this->nom_dossier;
     }
 
-    public function setSousDossier(string $sousDossier): self
+    public function setNomDossier(string $nom_dossier): self
     {
-        $this->sousDossier = $sousDossier;
+        $this->nom_dossier = $nom_dossier;
 
         return $this;
     }

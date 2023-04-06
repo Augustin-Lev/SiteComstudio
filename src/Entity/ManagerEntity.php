@@ -1,13 +1,7 @@
 <?php
 
-
-
-echo '
-    <script> 
-    alert("La suppression de cette catégorie entrainera la suppression de tous les dossiers et photos qu\'elle contient.
-    Si vous n\'êtes pas sûr de votre action, faite annuler.")
-    </script> ;';
-
+use App\Entity\Dossier;
+use App\Repository\DossierRepository;  
 
 var_dump($_POST);
 $dossier = "C:\wamp64\www\studioSite\public\image/".$_POST["categorie"]."/".$_POST["dossier"];
@@ -36,7 +30,15 @@ if($_POST["action"]=="ajout"){
         echo 'le dossier existe déjà';
 
     }else{
-          
+        $dossier = new Dossier;
+        $dossier -> setCategorie($_POST["categorie"]);
+        $dossier -> setNomDossier($_POST['dossier']);
+        
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($dossier);
+        $em->flush();
+        echo 'dossier en base de donnée <br/>';
+        
         if (mkdir($dossier)){
             echo "le dossier a bien été ajouté";
         }else{

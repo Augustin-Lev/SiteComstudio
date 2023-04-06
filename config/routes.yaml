@@ -45,3 +45,17 @@ manager:
    controller: App\Controller\ManagerController::index
 
 
+
+
+portfolio:
+   path: /portfolio
+   controller: App\Controller\AdminController::portfolio
+
+
+categorie:
+   path: /categorie
+   controller: App\Controller\CategorieController::index
+   
+add_categorie:
+   path: /add_categorie
+   controller: App\Controller\CategorieController::add
