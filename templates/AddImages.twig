@@ -1,20 +1,17 @@
 {% include 'view_admin.twig' %}
 <div class="background">  
 
-{% set categorie = "GALA" %}
-{% set dossier = "2023" %}
 
     <article class='article-categorie'>
         <h2><img src="image/upload.svg"></h2>
-        <h3>{{categorie}} - {{dossier}}</h3>
+        <h3>{{categoriepost}} - {{dossierpost}}</h3>
 
         <form method="POST" action="\upload" enctype="multipart/form-data">
             
             <input type="file" accept=".jpg, .jpeg" name="fichier[]" class="boutton" multiple>
 
-            <input type="hidden" name="action" value="supprimer">
-            <input type="hidden" name="categorie" value={{categorie}}>
-            <input type="hidden" name="dossier" value={{ dossier }}>
+            <input type="hidden" name="categorie" value= {{categoriepost}}>
+            <input type="hidden" name="dossier" value= {{ dossierpost }}>
             
             <button type="submit" class="boutton" name="ajouter" value="dossier">Ajouter des image</button>
             <a href="\admin" class="boutton">Annuler</a>

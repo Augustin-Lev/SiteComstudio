@@ -471,3 +471,7 @@ article{
 .portfolio-manager>a>img{
     width: auto;
 }
+
+.admin-bouttons{
+    display: flex;
+}

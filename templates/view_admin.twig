@@ -47,15 +47,28 @@
                     {% if not i == 0 %}
                     <div class="dossier">
                         <h3>{{ dossier }}</h3>
-                        <form method="POST" action="\manager">
-                            <img src="image/stopwatch.svg">
-                            <a href='add_image'><img src="image/upload.svg"></a>
-                            <input type="hidden" name="action" value="supprimer">
-                            <input type="hidden" name="categorie" value={{categorie[0]}}>
-                            <input type="hidden" name="dossier" value={{categorie[i]}}>
+                        <div class="admin-bouttons">
+                            <form method="POST" action="\add_image">
+                                <input type="hidden" name="categorie" value={{categorie[0]}}>
+                                <input type="hidden" name="dossier" value={{categorie[i]}}>
 
-                            <button type="submit"><img src="image/x-circle-fill.svg"></button>
-                        </form>
+                                <button type="submit" name="action" value="add_image"><img src="image/stopwatch.svg"></button>
+                            </form>
+                            
+                            <form method="POST" action="\add_image">
+                                <input type="hidden" name="categorie" value={{categorie[0]}}>
+                                <input type="hidden" name="dossier" value={{categorie[i]}}>
+
+                                <button type="submit" name="action" value="add_image"><img src="image/upload.svg"></button>
+                            </form>
+
+                            <form method="POST" action="\manager">
+                                <input type="hidden" name="categorie" value={{categorie[0]}}>
+                                <input type="hidden" name="dossier" value={{categorie[i]}}>
+                                
+                                <button type="submit" name="action" value="supprimer"><img src="image/x-circle-fill.svg"></button>
+                            </form>
+                        </div>
                     </div>
                     {% endif %}
 

@@ -14,8 +14,10 @@ class AddImageController extends AbstractController
 
    public function index(Request $request)
    {
-
-     return $this->render('AddImage.twig');
+    echo '$_POST';
+    var_dump($_POST);
+   
+    return $this->render('AddImage.twig', ['categoriepost'  => $_POST['categorie'], 'dossierpost' => $_POST['dossier']]);
    }
 
 }

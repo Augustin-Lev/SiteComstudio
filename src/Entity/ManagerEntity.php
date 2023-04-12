@@ -76,5 +76,3 @@ if($_POST["action"]=="ajout"){
     }
 }
 
-
-
