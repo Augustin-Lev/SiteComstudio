@@ -7,13 +7,30 @@ var_dump($_POST);
 $dossier = "C:\wamp64\www\studioSite\public\image/".$_POST["categorie"]."/".$_POST["dossier"];
 
 if($_POST["action"]=='supprimer'){
+    //ici supprimer de la base de donnée
+
+    $identifiant = 1;
+    $userRepo = $entityManager->getRepository(Categorie::class);
+
+    // Récupération de l'utilisateur (donc automatiquement géré par Doctrine)
+    $lignes = $userRepo->findBy([
+        'nom_categorie' => $_POST['categorie'],
+        'dossier' => $_POST['dossier']
+    ]);
+
+    foreach ($lignes as $ligne){
+        $entityManager->remove($ligne);
+        $entityManager->flush($ligne);
+        // var_dump($userRepo->find($identifiant)); // doit renvoyer NULL   
+    }
+   
+    
     if (file_exists($dossier)){
         $files = glob($dossier.'/*'); // get all file names
         foreach($files as $file){ // iterate files
         if(is_file($file))
             unlink($file); // delete file
         }
-    
         if (rmdir($dossier)){
             echo "le dossier a bien été supprimé";
         }else{
