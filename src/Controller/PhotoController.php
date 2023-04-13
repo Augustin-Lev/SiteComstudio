@@ -26,8 +26,7 @@ class PhotoController extends AbstractController
 
    public function categorie(EntityManagerInterface $entityManager, $categorie): Response
    {
-        require ("C:\wamp64\www\studioSite\src\Entity\CategorieManager.php");
-       
+        require ("C:\wamp64\www\studioSite\src\Entity\CategorieManager.php");  
         return $this->render('view_categories_pool.twig', ["categories" => $categorieTab, "categorieactuel"=> $categorie]);
    }
 }

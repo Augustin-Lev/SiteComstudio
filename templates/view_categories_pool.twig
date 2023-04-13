@@ -14,7 +14,6 @@
         <div class="header-logo">Com'STUDIO</div>
     </header>
 
-<div class="derniere-categories">
 
 
     <div class="derniere-categories">
@@ -35,7 +34,7 @@
 
                     <div class="derniere-categorie1">
                         <h2> {{ dossier}} </h2>
-                        <a href="/photo/{{ dossier}} class="boutton">Photos</a>
+                        <a href="/photo/{{ categorie[0] }}/{{ dossier}}" class="boutton">Photos</a>
                     </div>
                 {% endif %}
             {% endfor %}
