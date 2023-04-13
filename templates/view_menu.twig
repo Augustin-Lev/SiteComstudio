@@ -14,89 +14,45 @@
         <div class="header-logo">Com'STUDIO</div>
     </header>
 
+<div class="derniere-categories">
+   
+    {% for i in 0..2%}
+            <div class="derniere-categorie1">
+                <h2>babouche 2023</h2>
+                <a href="/photo/" class="boutton">Photos</a>
+             </div>
+
+    {% endfor %}
+ </div>
+    
+   <div>
+        <img src='loupe'>
+        <input type = 'text'>
+        <button type="submit">Rechercher</button>
+   <div>
+
+
     <div class="derniere-categories">
+    {% set i = 0 %}
+    {% for categorie in categories %}
+        {% set i = i + 1 %}
+
+        {% if (i/2) == 0 %}
+            </div>
+            <div class="derniere-categories">
+        {% endif %}
+
+
         <div class="derniere-categorie1">
-            <h2>Rallye 2023</h2>
-            <a href="/photo" class="boutton">Photos</a>
+            <h2> {{ categorie[0]}} </h2>
+            <a href="/photo/{{ categorie[0]}}" class="boutton">Photos</a>
         </div>
-
-        <div class="derniere-categorie2">
-            <h2>JDC 2023</h2>
-            <a href="/photo" class="boutton">Photos</a>
-        </div>
-
-        <div class="derniere-categorie3">
-            <h2>DFI 2023</h2>
-            <a href="/photo" class="boutton">Photos</a>
-        </div>
+    {% endfor %}
     </div>
+   
 
-    <label for="post-2">
-        <div class="conteneur-categorie">
-            
-            <div  class="categorie-label">
-                <img src="image/chevron-down.svg" alt="">
-                <h2 class="categorie">Gala</h2>
-            </div>
-                
-            <input type="checkbox" class="read-more-state" id="post-2" />
 
-            <ul class="read-more-wrap">
-                <li class="read-more-target" >Gala 2023</li>
-                <li class="read-more-target" >Gala 2022</li>
-                <li class="read-more-target" >Gala 2021</li>
-                <li class="read-more-target" >Gala 2020</li>
-                <li class="read-more-target" >Gala 2019</li>
-                <li class="read-more-target" >Gala 2018</li>
-            </ul>    
-            
-        </div>
-    </label>
 
-    <label for="post-3">
-        <div class="conteneur-categorie">
-            
-            <div  class="categorie-label">
-                <img src="image/chevron-down.svg" alt="">
-                <h2 class="categorie">Gala</h2>
-            </div>
-                
-            <input type="checkbox" class="read-more-state" id="post-3" />
-
-            <ul class="read-more-wrap">
-                <li class="read-more-target" >Gala 2023</li>
-                <li class="read-more-target" >Gala 2022</li>
-                <li class="read-more-target" >Gala 2021</li>
-                <li class="read-more-target" >Gala 2020</li>
-                <li class="read-more-target" >Gala 2019</li>
-                <li class="read-more-target" >Gala 2018</li>
-            </ul>    
-            
-        </div>
-    </label>
-
-    <label for="post-4">
-        <div class="conteneur-categorie">
-            
-            <div  class="categorie-label">
-                <img src="image/chevron-down.svg" alt="">
-                <h2 class="categorie">Gala</h2>
-            </div>
-                
-            <input type="checkbox" class="read-more-state" id="post-4" />
-
-            <ul class="read-more-wrap">
-                <li class="read-more-target" >Gala 2023</li>
-                <li class="read-more-target" >Gala 2022</li>
-                <li class="read-more-target" >Gala 2021</li>
-                <li class="read-more-target" >Gala 2020</li>
-                <li class="read-more-target" >Gala 2019</li>
-                <li class="read-more-target" >Gala 2018</li>
-            </ul>    
-            
-        </div>
-    </label>
- 
 
     {% include 'footer.html' %}
 

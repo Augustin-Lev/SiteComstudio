@@ -1,44 +1,50 @@
 <!DOCTYPE html>
-
-{% set nbPerRow = 3 %}
-
-
-
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="..\..\style\stylesheet.css" >
-    <title>Com'Studio</title>
+    <link rel="stylesheet" href="..\style\stylesheet.css" >
+    <link rel="stylesheet" href="style\demo.css" >
+    <link rel="javascript" href="style\javascript.js" >
+    <title>Menu</title>
 </head>
 <body>
-    <header class="header-photo">
-        <div><a href="/menu"><img src="..\..\image/arrow-left.svg" height="40%"></img></a></div>
-        <div><h1>{{ categorie }}</h1></div>
-        <div id="home" class="header-logo">Com'STUDIO</div>
+    <header>
+        <div class="header-logo">Com'STUDIO</div>
     </header>
 
-    <div class="row">
+<div class="derniere-categories">
 
 
-    {% for i in 1..10 %}
-        <div class="conteneur-photo">
-            <div class="download">
-                <a href="../../image/{{ categorie }}/{{dossier}}/studio_{{ categorie }}-{{dossier}}_{{i}}.jpg" download><img src="../../image/download.svg" ></a>
-            </div>
-            <a href="../../image/{{ categorie }}/{{dossier}}/studio_{{ categorie }}-{{dossier}}_{{i}}.jpg"><img src="../../image/{{ categorie }}/{{dossier}}/studio_{{ categorie }}-{{dossier}}_{{i}}.jpg" height="200px"alt=""></a>
-        </div>  
-         
-        {% if i % nbPerRow == 0 %}
-            </div>
-            <div class="row">
+    <div class="derniere-categories">
+    {% set i = 0 %}
+    {% for categorie in categories %}
+        {% if categorie[0] == categorieactuel %}
+            
+            {% for dossier in categorie %}
+
+                {% if dossier != categorieactuel %}
+                    {% set i = i + 1 %}
+
+                    {% if (i/2) == 0 %}
+                        </div>
+                        <div class="derniere-categories">
+                    {% endif %}
+
+
+                    <div class="derniere-categorie1">
+                        <h2> {{ dossier}} </h2>
+                        <a href="/photo/{{ dossier}} class="boutton">Photos</a>
+                    </div>
+                {% endif %}
+            {% endfor %}
         {% endif %}
+            
     {% endfor %}
     </div>
-
-    
-    <footer>
+   
+<footer>
         <div class="conteneur-footer-logo">
             <img src="/image/Logo_Noir.jpg" alt="logoCom'Studio" class="logo-footer">
         </div>
@@ -60,31 +66,31 @@
             <div class="ligne-logo">
                 <p>Nous suivre sur :  </p>
                 <a href="https://www.instagram.com/comstudio_unilasalle/" target="_blank">
-                    <img src="../../image/instagram.svg"
+                    <img src="../image/instagram.svg"
                         height="30px"
                         width="30px"   
                         alt="logo Instagram">
                 </a>
                 <a href="https://www.tiktok.com/@comstudio" target="_blank" rel="noopener noreferrer">
-                    <img src="../../image/tiktok.svg"
+                    <img src="../image/tiktok.svg"
                             height="30px"
                             width="30px"   
                             alt="logo Tiktok">
                 </a>
                 <a href="http://www.youtube.com/@comstudiounilasalle7497" target="_blank" rel="noopener noreferrer">
-                    <img src="../../image/youtube.svg"
+                    <img src="../image/youtube.svg"
                                 height="30px"
                                 width="30px"   
                                 alt="logo Youtube">
                 </a>
                 <a href="https://www.linkedin.com/company/com-studio-unilasalle" target="_blank" rel="noopener noreferrer">
-                    <img src="../../image/linkedin.svg"
+                    <img src="../image/linkedin.svg"
                                 height="30px"
                                 width="30px"   
                                 alt="logo Linkedin">
                 </a>
                 <a href="https://www.facebook.com/ComStudioUniLaSalleBeauvais" target="_blank" rel="noopener noreferrer">
-                    <img src="../../image/facebook.svg"
+                    <img src="../image/facebook.svg"
                                 height="30px"
                                 width="30px"   
                                 alt="logo Facebook">
@@ -97,6 +103,7 @@
       
 
     </footer>
- 
+
+
 </body>
 </html>

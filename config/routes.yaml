@@ -16,9 +16,7 @@ menu:
    controller: App\Controller\MenuController::index
 
 
-photo:
-   path: /photo
-   controller: App\Controller\PhotoController::index
+
 
 admin:
    path: /admin
@@ -56,3 +54,16 @@ categorie:
 add_categorie:
    path: /add_categorie
    controller: App\Controller\CategorieController::add
+
+categorie-pool:
+   path: /photo/{categorie}
+   controller: App\Controller\PhotoController::categorie
+
+
+dossier:
+   path: /photo/{categorie}/{dossier}
+   controller: App\Controller\PhotoController::dossier
+
+photo:
+   path: /photo
+   controller: App\Controller\PhotoController::index
