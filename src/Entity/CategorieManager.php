@@ -80,14 +80,14 @@ if(isset($_POST['name_categorie'])){
         
                 $em->persist($categorie);
                 $em->flush();
-                echo 'ok';
+                echo 'ok <br/>';
                 
     
                 if(mkdir($path)){
-                    echo "le dossier catégorie a bien été créé";
+                    echo "le dossier catégorie a bien été créé <br/>";
                     $path = "C:\wamp64\www\studioSite\public\image/".$_POST["name_categorie"].'/'.$_POST["name_dossier"];
                     if(mkdir($path)){
-                        echo "le dossier dossier a bien été créé";
+                        echo "le dossier dossier a bien été créé <br/>";
                     }
                 }
             }
@@ -96,7 +96,7 @@ if(isset($_POST['name_categorie'])){
     
     
     }else{
-        echo 'pas de categorie à créer';
+        echo 'pas de categorie à créer <br/>';
     }
 } 
 

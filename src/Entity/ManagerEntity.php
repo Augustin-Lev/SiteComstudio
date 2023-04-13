@@ -7,7 +7,7 @@ var_dump($_POST);
 $dossier = "C:\wamp64\www\studioSite\public\image/".$_POST["categorie"]."/".$_POST["dossier"];
 
 if($_POST["action"]=='supprimer'){
-    //ici supprimer de la base de donnée
+   
 
     $identifiant = 1;
     $userRepo = $entityManager->getRepository(Categorie::class);
@@ -23,7 +23,6 @@ if($_POST["action"]=='supprimer'){
         $entityManager->flush($ligne);
         // var_dump($userRepo->find($identifiant)); // doit renvoyer NULL   
     }
-   
     
     if (file_exists($dossier)){
         $files = glob($dossier.'/*'); // get all file names
@@ -32,14 +31,26 @@ if($_POST["action"]=='supprimer'){
             unlink($file); // delete file
         }
         if (rmdir($dossier)){
-            echo "le dossier a bien été supprimé";
+            echo "le dossier a bien été supprimé <br/>"; 
+            
+            $restant = $userRepo->findBy([
+                'nom_categorie' => $_POST['categorie']
+            ]);
+            var_dump($restant);
+        
+            if (empty($restant)){
+                if (rmdir("C:\wamp64\www\studioSite\public\image/".$_POST["categorie"])){
+                    echo "la catégorie à été supprimée  <br/>";
+                }
+            }
+            
+           
         }else{
-            echo "une erreur est apparu";
+            echo "une erreur est apparu  <br/>";
         }
     }else{
         echo 'le dossier n\'existe déjà plus';
     }
-    
 }
 
 if($_POST["action"]=="ajout"){
