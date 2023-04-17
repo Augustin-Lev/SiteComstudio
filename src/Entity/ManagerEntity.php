@@ -62,6 +62,7 @@ if($_POST["action"]=="ajout"){
         $enregistement = new Categorie;
         $enregistement -> setNomCategorie($_POST["categorie"]);
         $enregistement -> setDossier($_POST['dossier']);
+        $enregistement -> setNbImage(0);
 
         $repository = $entityManager->getRepository(categorie::class);
         $product = $repository->findAll();

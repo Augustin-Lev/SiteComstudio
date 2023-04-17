@@ -51,6 +51,7 @@ if(isset($_POST['name_categorie'])){
         $nom = $_POST['name_categorie'];
         $categorie = new Categorie;
         $categorie -> setNomCategorie($nom);
+        $categorie -> setNbImage(0);
     
         if(isset($_POST['name_dossier'])){
             $categorie -> setDossier($_POST['name_dossier']);

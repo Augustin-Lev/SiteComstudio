@@ -18,8 +18,8 @@ class UploadController extends AbstractController
 
    public function index(EntityManagerInterface $entityManager, Request $request)
    {
-     require("C:\wamp64\www\studioSite\src\Entity\Upload.php");
-     return $this->render('blank.twig');
+        require("C:\wamp64\www\studioSite\src\Entity\Upload.php");
+        return $this->render('blank.twig');
    }
 
 }

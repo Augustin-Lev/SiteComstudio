@@ -1,12 +1,19 @@
 <?php
 use App\Entity\Images;
 use App\Repository\ImagesRepository;
+use App\Entity\Categorie;
+use App\Repository\CategorieRepository;
  
 // var_dump($_POST);
 // var_dump($_FILES['fichier']);
 
 $catego = $_POST['categorie'];
 $dossier = $_POST['dossier'];
+
+
+   
+
+
 
 if ($_POST['ajouter'] == 'portfolio'){
     $chemin = "C:\wamp64\www\studioSite\public\image\portfolio\portfolio";
@@ -16,21 +23,40 @@ if ($_POST['ajouter'] == 'portfolio'){
 if($_POST['ajouter'] == 'dossier'){
     $repository = $entityManager->getRepository(Images::class);
     $product = $repository->findDossierId($catego, $dossier);
-    // var_dump($product);
+    //var_dump($product);
 
+    
 
-    $i = 1;
-    foreach($product as $image){
-        if ($image['index_dossier']>$i){
-            $i = $image['index_dossier'];
+   
+    $repository = $entityManager->getRepository(categorie::class);
+    $categorie = $repository->findAll();    
+    foreach( $categorie as $dossierLigne){
+        $categorieBDD = $dossierLigne-> getNomCategorie();
+        $dossierBDD = $dossierLigne-> getDossier();
+        $nbPhotosBDD = $dossierLigne -> getNbImage();
+        $idBDD = $dossierLigne -> getId();
+
+        // var_dump($categorieBDD);        
+        // var_dump($catego);
+
+        // var_dump($dossierBDD);        
+        // var_dump($dossier);
+        
+
+        if( $categorieBDD == $catego and $dossierBDD == $dossier ){
+            $nbPhotos = $nbPhotosBDD;
+            $id = $idBDD;
         }
-    }
+        
+    } 
+    
+    $i = $nbPhotos;
 
     $chemin = $chemin  = "C:\wamp64\www\studioSite\public\image/".$catego."/".$dossier."/"."studio_".$catego."-".$dossier;  
 
-    var_dump($chemin);
+    // var_dump($chemin);
     foreach( $_FILES['fichier']['tmp_name'] as $from){
-        $i++;
+        
         $to = "_".$i.'.jpg'; 
         if(move_uploaded_file($from, $chemin.$to)){
             $image = new Images;
@@ -46,10 +72,18 @@ if($_POST['ajouter'] == 'dossier'){
             $em->flush();
     
             echo 'image '.$i.' bien importée <br/>';
+           
             
         }else{
             echo 'image '.$i.' echec <br/>';
-        }
-       
+        }  
+        $i++;     
     }
+    
+    $categorieRepo = $entityManager->getRepository(categorie::class);
+
+    // Récupération de l'utilisateur (donc automatiquement géré par Doctrine)
+    $categorie = $categorieRepo->find($id);
+    $categorie->setNbImage($i);    
+    $entityManager->flush();
 }
