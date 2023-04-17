@@ -10,26 +10,29 @@
     <title>Menu</title>
 </head>
 <body>
-    <header>
-        <div class="header-logo">Com'STUDIO</div>
+    <header class="header">
+        <a href="/" class="header-link" style>Presentation</a>
+        <div><img src="image/Logo_Noir_header.jpg"></div>
+        <a href="/login">Photos</a>
     </header>
 
 <div class="derniere-categories">
    
     {% for i in 0..2%}
-            <div class="derniere-categorie1">
-                <h2>babouche 2023</h2>
-                <a href="/photo/" class="boutton">Photos</a>
-             </div>
+
+            <a href="/photo/babouche/2023" class="derniere-categorie1"  style='background-image:linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%), url("/image/rallye.jpg");'>
+                <div></div>
+                <h2 class='text-categorie'> babouche 2023 </h2>
+            </a>
 
     {% endfor %}
  </div>
     
-   <div>
-        <img src='loupe'>
+   <div class="searchbar">
+        
         <input type = 'text'>
-        <button type="submit">Rechercher</button>
-   <div>
+        <button type="submit"><img src='../image/search.svg'></button>
+   </div>
 
 
     <div class="derniere-categories">
@@ -43,16 +46,19 @@
         {% endif %}
 
 
-        <div class="derniere-categorie1">
-            <h2> {{ categorie[0]}} </h2>
-            <a href="/photo/{{ categorie[0]}}" class="boutton">Photos</a>
-        </div>
+        
+        <a 
+            href="/photo/{{ categorie[0]}}" 
+            class="derniere-categorie1"  
+            style='background-image:linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%), url("/image/rallye.jpg");'
+            >
+                <div></div>
+                <h2 class='text-categorie'> {{ categorie[0]}} </h2>
+        </a>
+        
     {% endfor %}
     </div>
    
-
-
-
 
     {% include 'footer.html' %}
 

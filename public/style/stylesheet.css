@@ -1,7 +1,16 @@
 body{
-    background-color: aquamarine;
+    background-color:#1A1A1A ;
+    background-color:#919191 ;
+    background-color:#ECECEC ;
+    background-color:#F9F9F8 ;
+    background-color:#C5030C ;
+    background-color:#7D0003 ;
+    
     padding: 0%;
     margin: 0%;
+
+   
+
 }
 .block-taille-ecran{
     min-height: 100vh;  
@@ -16,7 +25,25 @@ body{
     background-image: url("/image/EJ1A6224.jpg");
     background-size: cover;
 }
+#portfolio{
+    height: 100%;
+    overflow: hidden;
+    background-color:#7D0003;
+  
+  
+}
+.portfolio-row{
+    display: flex;
+    flex-direction: row;
+}
 
+.portfolio-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+}
 .presentation{
     display: flex;
     flex-direction: column;
@@ -24,15 +51,22 @@ body{
     align-items: center;
     justify-content: center;
 
+    position: sticky;
+    top : 0%;
+    z-index: -1;
+
+    background-color: #C5030C;
 }
 
 .portfolio{
-
+    height: 20vh;
+    width: 30vh;
     flex-direction: column;
     justify-items: center;
     align-items: center;
+    background-size: cover;
 
-    background-color: blue;
+    margin: 5px;
 
 }
 
@@ -40,8 +74,8 @@ body{
     display: flex;
     flex-direction: row;
     justify-items: center;
-    align-items: center;
-    justify-content: space-evenly;
+    align-items: flex-start;
+    justify-content: space-evenly;  
 }
 
 .offre-grand{
@@ -49,8 +83,11 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    
+
+    background-color:#919191;
 }
+
+
 .boutton{
     background-color: brown;
     padding: 3%;
@@ -73,11 +110,30 @@ body{
 }
 
 .carte{
-    border: solid 1mm;
+   
+    border-radius: 16px;
+    background: #7D0003;
+  
+    padding: 2%;
+
+    display: flex;
+    flex-direction: column;      
+    box-shadow: rgb(125, 0, 3) 0px 0px 8px, rgba(0, 0, 0, 0.3) 0px 0px 8px;       
+
+    flex:0.2;
+ 
+}
+.titre-carte{
+    border-radius: 16px;
+    background-color: white ;
+    padding: 2%;
+    margin : 0%;
 }
 
 .offres-contenu{
     text-align: left;
+    padding-top:8%;
+    padding-bottom: 8%;
 }
 
 .contact{
@@ -113,6 +169,7 @@ body{
 footer{
     display: flex;
     flex-direction: row;
+    background-color: white;
 
 }
 footer>div{
@@ -211,18 +268,12 @@ a{
     background: linear-gradient(90deg, rgb(165, 42, 42) 0%, rgba(252,252,252,0) 100%);
 }
 
-.header-logo{
-    padding : 25px;
-    font-size: 25px;
-}
-
 .derniere-categories {
     display: flex;
 }
 
 .derniere-categories>div {
     flex:1;
-    
 
     display: flex;
     flex-direction: column;
@@ -230,23 +281,79 @@ a{
     align-items: center;
 
     margin: 2vw;
-    height: calc(88vw/3) ;
+    height: calc(88vw/3);
 }
 
 
 .derniere-categorie1{
-    background-image: url("/image/rallye.jpg");
-    background-size:cover;
+    flex:1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 2vw;
+    height: calc(88vw/3);
+
+ 
+    border-radius: 4px;
+    display: flex;  
+    background-position: center;
+    background-size:150%;
+
+    transition-property: background-size;
+    transition-duration: 0.5s;
+
+}
+.derniere-categorie1:hover{
+    background-size: 160%;
 }
 
-.derniere-categorie2{
-    background-image: url("/image/JDC.jpg");
-    background-size:cover;
+.derniere-categorie1>div{
+    flex:2;
 }
 
-.derniere-categorie3{
-    background-image: url("/image/DFI.jpg");
-    background-size:cover;
+.text-categorie{
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;    
+}
+
+.searchbar{
+    text-align: center;
+    background-color: beige;
+
+    margin-left: 20%;
+    margin-right: 20%;
+
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 4%;
+    padding-right: 4%;
+
+    border-radius:10000000px;
+
+
+    display: flex;
+}
+
+.searchbar>input{
+    flex : 3;
+    height : 4vh;
+
+    border : none;
+    background-color: inherit   ;
+}
+.searchbar>button{
+    flex : 1;
+    height :auto;
+    border : none;
+    background-color: inherit;
+}
+
+.searchbar>button>img{
+    flex : 1;
+    height :auto;
 }
 
 .conteneur-categorie{
@@ -337,28 +444,38 @@ li{
     justify-content: space-around;
 }
 
-.header-photo{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
 
-.header-photo>div{
+.header{
     padding: 25px;
     flex: 1;
     display: flex;
     align-content: center;
     justify-content: center;
     align-items: center;
-}
-.header-photo>div>a{
-    height: 100%;
 
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    align-items: center; 
+    background-color: white;
 }
+.header>div>img{
+    height: 15vh;
+}
+.header>a{
+    flex:1;
+    text-align: center;
+}
+
+.header-photo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+}
+
+.header-photo>div{
+    display: flex;
+}
+
+
 
 /* Administrateur */
 .admin-categorie{

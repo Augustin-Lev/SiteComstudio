@@ -12,8 +12,16 @@ class HomeController extends AbstractController
 
    public function index(): Response
    {
-       
-       return $this->render('view_index.twig');
+       $portfolios = array(
+                "/image/portfolio/portfolio1.jpg",
+                "/image/portfolio/portfolio2.jpg",
+                "/image/portfolio/portfolio3.jpg",
+                "/image/portfolio/portfolio4.jpg",
+                "/image/portfolio/portfolio5.jpg"
+       );
+
+     
+       return $this->render('view_index.twig',["portfolios"=>$portfolios]);
    }
 
 }

@@ -10,9 +10,12 @@
     <title>Menu</title>
 </head>
 <body>
-    <header>
-        <div class="header-logo">Com'STUDIO</div>
-    </header>
+
+    <header class="header">
+        <a href="/" class="header-link" style>Presentation</a>
+        <div><img src="../image/Logo_Noir_header.jpg"></div>
+        <a href="/login">Photos</a>
+</header>
 
 
 
@@ -22,20 +25,26 @@
         {% if categorie[0] == categorieactuel %}
             
             {% for dossier in categorie %}
-
+               
                 {% if dossier != categorieactuel %}
-                    {% set i = i + 1 %}
+                    
 
-                    {% if (i/2) == 0 %}
+                    {% if (i%3) == 0 %}
                         </div>
                         <div class="derniere-categories">
                     {% endif %}
-
-
-                    <div class="derniere-categorie1">
-                        <h2> {{ dossier}} </h2>
-                        <a href="/photo/{{ categorie[0] }}/{{ dossier}}" class="boutton">Photos</a>
-                    </div>
+                    {% set i = i + 1 %}
+                    
+                    <a 
+                        href="/photo/{{ categorie[0]}}/{{ dossier}}" 
+                        class="derniere-categorie1"  
+                        style='background-image:linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%), url("/image/rallye.jpg");'
+                        >
+                            <div></div>
+                            <h2 class='text-categorie'>  {{ dossier}}  </h2>
+                    </a>
+                          
+   
                 {% endif %}
             {% endfor %}
         {% endif %}
