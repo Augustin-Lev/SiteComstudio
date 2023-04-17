@@ -100,6 +100,24 @@ if(isset($_POST['name_categorie'])){
     }
 } 
 
+function NbPhotos($product, $categorie, $dossier){
+   
+
+    $categorieTab = [[$product[0]->getNomCategorie()]];
+    
+    $dejaPresent = FALSE;
+    foreach( $product as $ligne){
+        $categorieBDD = $ligne-> getNomCategorie();
+        $dossierBDD = $ligne-> getDossier();
+        $nbPhotosBDD = $ligne -> getNbImage();
+       
+        if( $categorieBDD == $categorie and $dossierBDD == $dossier ){
+            return $nbPhotosBDD ;
+        }
+        
+    } 
+    return 100;
+}
 
 
 

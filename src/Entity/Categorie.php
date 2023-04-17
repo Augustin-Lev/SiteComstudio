@@ -25,6 +25,9 @@ class Categorie
     #[ORM\Column(length: 255)]
     private ?string $dossier = null;
 
+    #[ORM\Column]
+    private ?int $nb_image = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -74,6 +77,18 @@ class Categorie
     public function setDossier(string $dossier): self
     {
         $this->dossier = $dossier;
+
+        return $this;
+    }
+
+    public function getNbImage(): ?int
+    {
+        return $this->nb_image;
+    }
+
+    public function setNbImage(int $nb_image): self
+    {
+        $this->nb_image = $nb_image;
 
         return $this;
     }
