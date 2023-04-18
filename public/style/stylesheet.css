@@ -51,9 +51,6 @@ body{
     align-items: center;
     justify-content: center;
 
-    position: sticky;
-    top : 0%;
-    z-index: -1;
 
     background-color: #C5030C;
 }
@@ -469,6 +466,16 @@ li{
     justify-content: space-around;
     align-items: center;
     align-content: center;
+}
+.header-index>div>img{
+    height: 15  vh;
+}
+
+.header-index{
+    position: sticky;
+    top : 0%;
+    z-index: 3;
+    
 }
 
 .header-photo>div{

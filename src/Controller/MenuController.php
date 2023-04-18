@@ -18,7 +18,9 @@ class MenuController extends AbstractController
    {
         require ("C:\wamp64\www\studioSite\src\Entity\CategorieManager.php");
         // var_dump($categorieTab);
-        return $this->render('view_menu.twig',['categories'=>$categorieTab]);
+        $categorieTab = categorieTable($product);
+        $troisDerniers = TroisDernier($product);
+        return $this->render('view_menu.twig',['categories'=>$categorieTab, 'troisDerniers' =>$troisDerniers ]);
    }
 
 }

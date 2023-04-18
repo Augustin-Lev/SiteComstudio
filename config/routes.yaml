@@ -16,8 +16,6 @@ menu:
    controller: App\Controller\MenuController::index
 
 
-
-
 admin:
    path: /admin
    controller: App\Controller\AdminController::index

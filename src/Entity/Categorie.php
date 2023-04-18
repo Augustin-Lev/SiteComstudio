@@ -28,6 +28,9 @@ class Categorie
     #[ORM\Column]
     private ?int $nb_image = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $date = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -89,6 +92,18 @@ class Categorie
     public function setNbImage(int $nb_image): self
     {
         $this->nb_image = $nb_image;
+
+        return $this;
+    }
+
+    public function getDate(): ?string
+    {
+        return $this->date;
+    }
+
+    public function setDate(string $date): self
+    {
+        $this->date = $date;
 
         return $this;
     }

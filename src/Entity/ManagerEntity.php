@@ -63,6 +63,14 @@ if($_POST["action"]=="ajout"){
         $enregistement -> setNomCategorie($_POST["categorie"]);
         $enregistement -> setDossier($_POST['dossier']);
         $enregistement -> setNbImage(0);
+        if($_POST['date'] != ''){
+            $date = $_POST['date'];
+            $enregistement -> setDate($date);
+        }else{
+            $date = date("Y-m-d");
+            $enregistement -> setDate($date);
+           
+        }
 
         $repository = $entityManager->getRepository(categorie::class);
         $product = $repository->findAll();
