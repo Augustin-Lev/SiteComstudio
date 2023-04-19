@@ -1,3 +1,32 @@
+!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style\stylesheet.css" >
+    <link rel="stylesheet" href="style\carousel.css" >
+    <link rel="javascript" href="style\javascript.js" >
+    <title>ADMIN</title>
+</head>
+    {% set nbPerRow = 4 %}
+
+<body>
+    {# {% include 'portfolio.twig' %} #}
+
+    <header class="header-photo">
+        <div id="home" class="header-logo">Com'STUDIO</div>
+        
+        <div><h1 style="color:white">Administrateur </h1></div>
+
+        <div>
+            <a href="/categorie" class="boutton">Nouvel evenement</a>
+            <a href="/portfolio" class="boutton">Portfolio</a>
+        </div>
+        
+    </header>
+
+
 <div class="background">    
     <article class='article-categorie'>
         <h2>Portfolio</h2>
@@ -26,3 +55,5 @@
 
     </article>
 </div>
+
+</body>

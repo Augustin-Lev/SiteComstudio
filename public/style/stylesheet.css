@@ -1,16 +1,23 @@
 body{
-    background-color:#1A1A1A ;
+
     background-color:#919191 ;
     background-color:#ECECEC ;
     background-color:#F9F9F8 ;
     background-color:#C5030C ;
     background-color:#7D0003 ;
-    
+    background-color:#1A1A1A ;
+    background-color:#ECECEC ;
+
     padding: 0%;
     margin: 0%;
 
+    font-family: Roboto;
    
 
+}
+h2{
+    font-family: Oswald,Helvetica,Arial,sans-serif;
+    font-size: 42px;
 }
 .block-taille-ecran{
     min-height: 100vh;  
@@ -24,14 +31,30 @@ body{
 
     background-image: url("/image/EJ1A6224.jpg");
     background-size: cover;
+
+    position: fixed;
+    top: 0%;
+    z-index: 0;
+    
+    height: 100vh;
+    width: 100vw;
+
 }
-#portfolio{
-    height: 100%;
-    overflow: hidden;
-    background-color:#7D0003;
-  
-  
+.presentation{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+
+    background-color:#ECECEC ;
+
+    position: relative;
+    z-index: 3;
+
 }
+
+
 .portfolio-row{
     display: flex;
     flex-direction: row;
@@ -43,36 +66,73 @@ body{
     justify-content: flex-start;
     align-items: center;
     align-content: center;
-}
-.presentation{
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    align-items: center;
-    justify-content: center;
 
+    height: 100%;
+    overflow: hidden;
+    background-color:#ECECEC ;
+    background-color:#F9F9F8 ;
 
-    background-color: #C5030C;
+    padding-bottom: 10%;
+    padding-top: 10%;
+
+    
+    position: relative;
+    z-index: 3;
 }
+
 
 .portfolio{
-    height: 20vh;
-    width: 30vh;
+    height: 20vw;
+    width: 25vw;
     flex-direction: column;
     justify-items: center;
     align-items: center;
     background-size: cover;
+    margin: 0px;
 
-    margin: 5px;
+    
+    background-position: center;
+    background-size:150%;
+
+    transition-property: background-size,background-color;
+
+    transition-duration: 0.5s;
 
 }
 
+.portfolio:hover{
+    background-size: 160%;
+    
+}
+.portfolio:hover .portfolio-hover{
+
+    background-image:url("/image/plus.svg");
+   
+     background-color:#ececec92 ;
+    height: 20vw;
+    width: 25vw;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    background-size: 40%;
+    margin: 0px;
+
+    background-position: center;
+    background-size:40%;  
+    background-repeat: no-repeat; 
+}
+
+.portfolio-hover{
+    position: none;
+}
 .offres{
     display: flex;
     flex-direction: row;
     justify-items: center;
     align-items: flex-start;
     justify-content: space-evenly;  
+
+ 
 }
 
 .offre-grand{
@@ -81,7 +141,10 @@ body{
     flex-direction: column;
     justify-content: space-evenly;
 
-    background-color:#919191;
+    background-color:#ECECEC ;
+    
+    position: relative;
+    z-index: 3;
 }
 
 
@@ -99,8 +162,8 @@ body{
 }
 
 .paragraphe-presentation{
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 .centrer{
     text-align: center;
@@ -109,22 +172,61 @@ body{
 .carte{
    
     border-radius: 16px;
-    background: #7D0003;
+    background: linear-gradient(to right bottom,#d5d4d4 ,#ECECEC);
   
     padding: 2%;
 
     display: flex;
     flex-direction: column;      
-    box-shadow: rgb(125, 0, 3) 0px 0px 8px, rgba(0, 0, 0, 0.3) 0px 0px 8px;       
+    box-shadow: #ECECEC 0px 0px 8px, rgba(0, 0, 0, 0.3) 0px 0px 8px;       
 
     flex:0.2;
  
 }
+
 .titre-carte{
     border-radius: 16px;
     background-color: white ;
     padding: 2%;
     margin : 0%;
+    /* box-shadow: #ECECEC 0px 0px 8px, rgba(0, 0, 0, 0.3) 0px 0px 8px;     */
+    box-shadow: 0px  4px 7px 0px rgba(0, 0, 0, 0.5);   
+
+}
+.titre-carte>h3{
+    text-transform: uppercase;
+    font-family: "Mont W05","sst",Arial,sans-serif;
+    font-style: normal;
+    font-weight: bolder;
+    letter-spacing: 0;
+    line-height: .94em;
+    text-transform: uppercase;
+
+}
+.titre-carte>p{
+    color: white;
+    font-size: smaller;
+
+}
+.lasalle{
+
+    background-color:#919191 ;
+    background-color:#ECECEC ;
+    background-color:#F9F9F8 ;
+    background-color:#C5030C ;
+    background-color:#7D0003 ;
+    background-color:#1A1A1A ;
+    background-color:#ECECEC ;
+
+    background-color:#1A1A1A ;
+    color:#C5030C ;
+  
+  
+}
+.entreprise{
+
+    background-color:#C5030C ;
+    color:#1A1A1A ;
 }
 
 .offres-contenu{
@@ -133,6 +235,26 @@ body{
     padding-bottom: 8%;
 }
 
+
+.label{
+
+    font-weight: bold;
+    margin-bottom: 0%;
+}
+.info{
+    margin-top: 0%;
+}
+input, textarea{
+    width: 100%;
+    border-radius: 16px;
+}
+.index-image{
+    background-image: url("/image/fond-index.jpg");
+    background-size: cover;
+    position: sticky;
+    top:-35%;
+    z-index: 2;
+}
 .contact{
 
     display: flex;
@@ -141,6 +263,8 @@ body{
     align-content: center;
     justify-content: center;
     align-items: center;
+
+    
 }
 
 .contact>form{
@@ -158,15 +282,25 @@ body{
 
 .contact-coordonnees{
     display: flex;
-    background-color: white;
+    
     flex-direction: row;
     justify-content: space-evenly;
+    
+    background-color:#ECECEC ;
+    padding-bottom: 5%;
+
+    
+    position: relative;
+    z-index: 3;
 }
 
 footer{
     display: flex;
     flex-direction: row;
     background-color: white;
+    
+    position: relative;
+    z-index: 3;
 
 }
 footer>div{
@@ -467,16 +601,23 @@ li{
     align-items: center;
     align-content: center;
 }
+
+.header-index{
+    background-color: #1a1a1a7e;
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    color: white;
+
+    position: sticky;
+    top: 0%;
+    z-index: 2;
+}
 .header-index>div>img{
     height: 15  vh;
 }
 
-.header-index{
-    position: sticky;
-    top : 0%;
-    z-index: 3;
-    
-}
 
 .header-photo>div{
     display: flex;
@@ -517,6 +658,7 @@ li{
     align-items: center;
     align-content: center;
     justify-content: space-between;
+    background-color: #7D0003 ;
 }
 .dossier>h3{
     margin-right: 20px;

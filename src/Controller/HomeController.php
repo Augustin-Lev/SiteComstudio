@@ -17,7 +17,6 @@ class HomeController extends AbstractController
                 "/image/portfolio/portfolio2.jpg",
                 "/image/portfolio/portfolio3.jpg",
                 "/image/portfolio/portfolio4.jpg",
-                "/image/portfolio/portfolio5.jpg"
        );
 
      

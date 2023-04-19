@@ -15,7 +15,9 @@ class AdminController extends AbstractController
 
    public function index(EntityManagerInterface $entityManager): Response
    { 
+       
         require ("C:\wamp64\www\studioSite\src\Entity\CategorieManager.php");
+        $categorieTab = categorieTable($product);
         return $this->render('view_admin.twig', ['categories' =>$categorieTab]);
    }
 

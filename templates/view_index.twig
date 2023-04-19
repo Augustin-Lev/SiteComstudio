@@ -7,33 +7,39 @@
     <link rel="stylesheet" href="style\stylesheet.css" >
     <link rel="stylesheet" href="style\carousel.css" >
     <link rel="javascript" href="style\javascript.js" >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
     <title>Com'Studio</title>
 </head>
 <body>
 
-
-    <div id="connexion" class="block-taille-ecran acceuil">
-        <a class="boutton" href = "/login">Voire les photos</a>
-    </div>
-
-    
     <header class="header header-index">
         <a href="/" class="header-link" style>Presentation</a>
-        <div><img src="image/Logo_Noir_header.jpg"></div>
+        <div><img src="image/Logo_Blanc.png"></div>
         <a href="/login">Photos</a>
     </header>
 
+
+
+    <div id="connexion" class="block-taille-ecran acceuil">
+        <a class="boutton" href = "/login">Voir les photos</a>
+    </div>
+
+    <div class="block-taille-ecran"></div>
+    
+  
     <div id="presentation" class="block-taille-ecran presentation">
-        <img src="/image/Logo_Noir.jpg" alt="logoCom'Studio" class="logo-rond">
-        <h2>Qui sommes-nous ?</h2>
+        <h2>UNE COM' LASALLIENNE</h2>
         <p class="paragraphe-presentation">
             Laborum ad nisi labore mollit labore laborum veniam minim laborum commodo quis laborum. Consequat non eiusmod magna consectetur elit aliqua laborum aliqua irure aliqua duis. Labore officia fugiat commodo eiusmod et. Aliquip sint Lorem et pariatur aliqua adipisicing voluptate minim pariatur Lorem incididunt Lorem.
         </p>
     </div>
 
 
-    <div id="portfolio" class="block-taille-ecran portfolio-container">
-        <h2 class="centrer">Portfolio</h2>
+    <div id="portfolio" class="portfolio-container">
+    
         <div class="portfolio-row">
             {# <div class="carousel">
                 <ul class="slides">
@@ -122,69 +128,28 @@
                 </div>
                 </ul>
             </div>#}
-            {% set i = 0 %}
-            {% for portfolio in portfolios %}
-               
-                    {% if i%5 == 0%}
-                        </div>  
-                        <div class="portfolio-row">
-                    {% endif %}
-                     {% set i = i + 1 %}
-                <div class="portfolio" style="background-image:url({{ portfolio}})">
-                    
             
-                </div>
-            {% endfor %}
-             {% set i = 0 %}
-            {% for portfolio in portfolios %}
-               
-                    {% if i%5 == 0%}
-                        </div>  
-                        <div class="portfolio-row">
-                    {% endif %}
-                     {% set i = i + 1 %}
-                <div class="portfolio" style="background-image:url({{ portfolio}})">
-                    
             
-                </div>
-            {% endfor %}
-             {% set i = 0 %}
             {% for portfolio in portfolios %}
-               
-                    {% if i%5 == 0%}
-                        </div>  
-                        <div class="portfolio-row">
-                    {% endif %}
-                     {% set i = i + 1 %}
-                <div class="portfolio" style="background-image:url({{ portfolio}})">
-                    
-            
+            <a href="/photo/portfolio/2023">
+            <div class="portfolio" style="background-image:url({{ portfolio}})">
+                <div class = " portfolio-hover" >     
                 </div>
-            {% endfor %}
-             {% set i = 0 %}
-            {% for portfolio in portfolios %}
-               
-                    {% if i%5 == 0%}
-                        </div>  
-                        <div class="portfolio-row">
-                    {% endif %}
-                     {% set i = i + 1 %}
-                <div class="portfolio" style="background-image:url({{ portfolio}})">
-                    
-            
-                </div>
+            </div>
+            </a>
             {% endfor %}
 
         </div>  
+
     </div>
    
 
     <div id="offres" class="block-taille-ecran offre-grand ">
-        <h2>Nos offres</h2>
+        <h2>NOS OFFRES</h2>
         <div class="offres">
 
             <div class="carte">
-                <div class="titre-carte">
+                <div class="titre-carte lasalle">
                     <h3>Etudiants UniLaSalle</h3>
                     <p>Exclusivement reservés aux Lasalliens</p>
                 </div>
@@ -194,13 +159,13 @@
                     <li>Retouche photos gratuite</li>
                     <li>Publication sur le site gratuite</li>
                     <li>Vidéaste - 8€/h</li>
-                    <li>Montage - 8h€/min de vidéo</li>
+                    <li>Montage - 8€/min de vidéo</li>
                 </div>
                 <a href="reservation" class="boutton">Demander un devis </a>
             </div>
 
             <div class="carte">
-                 <div class="titre-carte">
+                 <div class="titre-carte entreprise">
                     <h3>Entreprise</h3>
                     <p>Découvrez-nous !</p>
                 </div>
@@ -209,7 +174,7 @@
                     <li>Retouche photos gratuite</li>
                     <li>Publication sur le site gratuite</li>
                     <li>Vidéaste - 8€/h</li>
-                    <li>Montage - 8h€/min de vidéo</li>
+                    <li>Montage - 8€/min de vidéo</li>
                 </div>
                 <a href="reservation" class="boutton">Demander un devis </a>
             </div>
@@ -217,18 +182,20 @@
             <div class="carte">
                  <div class="titre-carte">
                     <h3>Exterieurs</h3>
-                    <p>Envis de se faire plaisir ?</p>
+                    <p style="color:black;">Envis de se faire plaisir ?</p>
                 </div>
                 <div class="offres-contenu">
                     <li>Phographe - 8€/h</li>
                     <li>Retouche photos gratuite</li>
                     <li>Publication sur le site gratuite</li>
                     <li>Vidéaste - 8€/h</li>
-                    <li>Montage - 8h€/min de vidéo</li>
+                    <li>Montage - 8€/min de vidéo</li>
                 </div>
                 <a href="reservation" class="boutton">Demander un devis </a>
             </div>
         </div>
+    </div>
+    <div class="block-taille-ecran index-image">
     </div>
 
     <div id="contact" class="contact-coordonnees">
@@ -247,10 +214,10 @@
             <p class="label">Mail</p>
             <p class="info">comstudio@asso.unilasalle.fr</p>
 
-            <p class="label">instagram</p>
+            <p class="label">Instagram</p>
             <p class="info">@comstudio_unilasalle</p>
 
-            <p class="label">tiktok</p>
+            <p class="label">Tiktok</p>
             <p class="info">@comstudio</p>
 
             <p class="label">Youtube</p>

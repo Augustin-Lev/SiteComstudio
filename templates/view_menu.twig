@@ -21,7 +21,7 @@
     {% for i in 2..0%}
             <a href="/photo/{{troisDerniers[i][0]}}/{{troisDerniers[i][1]}}" class="derniere-categorie1"  style='background-image:linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%), url("/image/rallye.jpg");'>
                 <div></div>
-                <h2 class='text-categorie'>   {{troisDerniers[i][0]}} {{troisDerniers[i][1]}}</h2>
+                <h2 class='text-categorie'> {{troisDerniers[i][0]}} {{troisDerniers[i][1]}}</h2>
             </a>
     {% endfor %}
  </div>
@@ -43,8 +43,6 @@
             <div class="derniere-categories">
         {% endif %}
 
-
-        
         <a 
             href="/photo/{{ categorie[0]}}" 
             class="derniere-categorie1"  
